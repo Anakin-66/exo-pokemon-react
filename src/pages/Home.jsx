@@ -1,5 +1,7 @@
 import Footer from "../components/Footer";
 import Header from "../components/Header";
+import { Link } from "react-router-dom";
+import Teamlist from "../components/TeamList";
 
 
 function Home() {
@@ -75,14 +77,18 @@ function Home() {
     return (
         <>
         <Header/>
-            <h2>Mon Equipe</h2>
+            <h2>Mon Equipe</h2>   
             <main>
-                {teamPokemons.map ((pokemonsInTeam) =>
+                {teamPokemons.map ((pokemonInTeam) => 
+                <Link to={`/pokemons/${pokemonInTeam.id}/details`}>
                     <article>
-                        {pokemonsInTeam.name}
+                        <p>{pokemonInTeam.name}</p>
+                        <img src={pokemonInTeam.img} />
                     </article>
+                </Link>
                 )}
             </main>
+            <Teamlist />
         <Footer/>
         </>
     );

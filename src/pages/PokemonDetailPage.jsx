@@ -1,4 +1,9 @@
-function AllPokemons () {
+import Footer from "../components/Footer";
+import Header from "../components/Header";
+import Nav from "../components/Nav";
+import { useParams } from "react-router-dom";
+
+function PokemonDetailPage() {
 
     const pokemons = [
         {
@@ -66,19 +71,22 @@ function AllPokemons () {
         },
       ];
 
+      const { pokemonId } = useParams();
+
+      const pokemonToDisplay = pokemons.find((el) => {
+        return el.id == pokemonId;
+      })
+
     return (
         <>
-            <h2>Tous mes pokémons</h2>
-            <main>
-                {pokemons.map ((allPokemons) =>
-                <article>
-                  <p>{allPokemons.name}</p>
-                  <img src={allPokemons.img} />
-                </article>
-                )}
-            </main>
+            <Header />
+            <Nav />
+            <h1>Détail du pokémon</h1>
+            <h2> {pokemonToDisplay.name}</h2>
+            <img src={pokemonToDisplay.img} />
+            <Footer />
         </>
-    )
-}
-
-export default AllPokemons;
+    );
+  }
+  
+  export default PokemonDetailPage;
