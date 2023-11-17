@@ -75,6 +75,7 @@ function Home() {
     return (
         <>
         <Header/>
+            <h2>Mon Equipe</h2>
             <main>
                 {teamPokemons.map ((pokemonsInTeam) =>
                     <article>

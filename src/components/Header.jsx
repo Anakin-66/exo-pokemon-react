@@ -7,7 +7,9 @@ function Header () {
         <header>
             <h1>Site de mon équipe Pokémon</h1>
             <Nav />
-            <img src= {logo} />
+            <div className="myImage">
+                <img src= {logo} />
+            </div>
         </header>
     );
 }

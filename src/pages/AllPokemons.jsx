@@ -67,13 +67,16 @@ function AllPokemons () {
       ];
 
     return (
-        <main>
-            {pokemons.map ((allPokemons) =>
-             <article>
-                {allPokemons.name}
-             </article>
-            )}
-        </main>
+        <>
+            <h2>Tous mes pokémons</h2>
+            <main>
+                {pokemons.map ((allPokemons) =>
+                <article>
+                    {allPokemons.name}
+                </article>
+                )}
+            </main>
+        </>
     )
 }
 

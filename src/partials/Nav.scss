@@ -1,0 +1,13 @@
+ul {
+    display: flex;
+    justify-content: space-evenly;
+    text-decoration: none;
+}
+li {
+    list-style: none;
+
+}
+
+li:hover {
+    background-color: yellowgreen;
+}
